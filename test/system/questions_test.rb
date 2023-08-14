@@ -15,4 +15,13 @@ class QuestionsTest < ApplicationSystemTestCase
     take_screenshot
   end
 
+  test "saying Hello! yields a grumpy response from the coach" do
+    visit ask_url
+    fill_in "question", with: "Hello!"
+    click_on "Ask"
+
+    assert_text "Great!"
+    take_screenshot
+  end
+
 end
